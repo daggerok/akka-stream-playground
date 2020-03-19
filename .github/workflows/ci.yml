@@ -32,9 +32,7 @@ jobs:
             ${{ runner.os }}-ivy-
             ${{ runner.os }}-
       - name: Build and test app
-        run: cd $GITHUB_WORKSPACE && ./sbtw "project typed-akka-production-ready-api-java-example" clean test package assembly run
-      - name: Run app
-        run: java -jar $GITHUB_WORKSPACE/typed/typed-akka-production-ready-api-java-example/target/scala-2.13/*-assembly-*.jar
+        run: cd $GITHUB_WORKSPACE && ./sbtw "project typed-akka-production-ready-api-java-example" clean test package run
   typed-akka-production-ready-api-scala-example:
     strategy:
       matrix:
@@ -66,9 +64,7 @@ jobs:
             ${{ runner.os }}-ivy-
             ${{ runner.os }}-
       - name: Build and test app
-        run: cd $GITHUB_WORKSPACE && ./sbtw "project typed-akka-production-ready-api-scala-example" clean test package assembly run
-      - name: Run app
-        run: java -jar $GITHUB_WORKSPACE/typed/typed-akka-production-ready-api-scala-example/target/scala-2.13/*-assembly-*.jar
+        run: cd $GITHUB_WORKSPACE && ./sbtw "project typed-akka-production-ready-api-scala-example" clean test package run
   template:
     strategy:
       matrix:
@@ -100,6 +96,4 @@ jobs:
             ${{ runner.os }}-ivy-
             ${{ runner.os }}-
       - name: Build and test app
-        run: cd $GITHUB_WORKSPACE && ./sbtw "project template" clean test package assembly run
-      - name: Run app
-        run: java -jar $GITHUB_WORKSPACE/template/target/scala-2.13/*-assembly-*.jar
+        run: cd $GITHUB_WORKSPACE && ./sbtw "project template" clean test package run
