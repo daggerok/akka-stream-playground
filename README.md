@@ -23,6 +23,12 @@ sdk use java 8.0.242.j9-adpt
 * [YouTube: What's New In Akka 2.6?](https://www.youtube.com/watch?v=ZWIryjFKcXo)
 * [YouTube: Introduction to Akka Actors with Java](https://www.youtube.com/watch?v=rIFqJxMJ1MM)
 * [YouTube: Akka Anti-Patterns, Goodbye: Six Features of Akka 2.6](https://www.youtube.com/watch?v=hHF66Dbr-9s)
+* https://doc.akka.io/docs/akka/current/serialization-jackson.html
+* https://www.youtube.com/watch?v=Ad2DyOn4dlY
+* https://github.com/akka/akka-samples/blob/be22b412fd/akka-sample-kafka-to-sharding-scala/processor/src/main/scala/sample/sharding/kafka/UserEvents.scala
+* https://www.youtube.com/watch?v=xWuOGqmR7ow
+* https://www.youtube.com/watch?v=6ECsFlNNIAM
+* https://www.youtube.com/watch?v=HDsvbaLLa2I
 
 ## other repos
 
