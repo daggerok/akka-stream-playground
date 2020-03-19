@@ -1,0 +1,13 @@
+.idea
+!.idea/
+.idea/*
+!.idea/runConfigurations/
+*.iml
+*.ipr
+*.iws
+*.log*
+.DS_Store
+Thumbs.db
+target/
+/out/
+**/out/**
