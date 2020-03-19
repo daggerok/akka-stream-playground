@@ -22,6 +22,7 @@ sdk use java 8.0.242.j9-adpt
 * https://doc.akka.io/docs/akka/2.6/project/migration-guide-2.5.x-2.6.x.html#materializer-changes
 * [YouTube: What's New In Akka 2.6?](https://www.youtube.com/watch?v=ZWIryjFKcXo)
 * [YouTube: Introduction to Akka Actors with Java](https://www.youtube.com/watch?v=rIFqJxMJ1MM)
+* [YouTube: Akka Anti-Patterns, Goodbye: Six Features of Akka 2.6](https://www.youtube.com/watch?v=hHF66Dbr-9s)
 
 ## other repos
 
