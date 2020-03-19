@@ -1,12 +1,12 @@
 name: " CI"
 on: [push]
 jobs:
-  typed-akka-production-ready-api:
+  typed-akka-production-ready-api-java-example:
     strategy:
       matrix:
         java: [8]
         os: [ubuntu-latest]
-    name: typed-akka-production-ready-api with java ${{ matrix.java }} on ${{ matrix.os }}
+    name: typed-akka-production-ready-api-java-example with java ${{ matrix.java }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
       - name: Git clone
@@ -32,9 +32,43 @@ jobs:
             ${{ runner.os }}-ivy-
             ${{ runner.os }}-
       - name: Build and test app
-        run: cd $GITHUB_WORKSPACE && ./sbtw "project typed-akka-production-ready-api" clean test package assembly run
+        run: cd $GITHUB_WORKSPACE && ./sbtw "project typed-akka-production-ready-api-java-example" clean test package assembly run
       - name: Run app
-        run: java -jar $GITHUB_WORKSPACE/typed-akka-production-ready-api/target/scala-2.13/*-assembly-*.jar
+        run: java -jar $GITHUB_WORKSPACE/typed/typed-akka-production-ready-api-java-example/target/scala-2.13/*-assembly-*.jar
+  typed-akka-production-ready-api-scala-example:
+    strategy:
+      matrix:
+        java: [8]
+        os: [ubuntu-latest]
+    name: typed-akka-production-ready-api-scala-example with java ${{ matrix.java }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v1
+      - name: Setup java ${{ matrix.java }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+      - name: Cache sbt deps ~/.sbt
+        uses: actions/cache@v1
+        with:
+          path: ~/.sbt
+          key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt') }}
+          restore-keys: |
+            ${{ runner.os }}-sbt-
+            ${{ runner.os }}-
+      - name: Cache ivy deps ~/.ivy
+        uses: actions/cache@v1
+        with:
+          path: ~/.ivy
+          key: ${{ runner.os }}-ivy-${{ hashFiles('**/build.sbt') }}
+          restore-keys: |
+            ${{ runner.os }}-ivy-
+            ${{ runner.os }}-
+      - name: Build and test app
+        run: cd $GITHUB_WORKSPACE && ./sbtw "project typed-akka-production-ready-api-scala-example" clean test package assembly run
+      - name: Run app
+        run: java -jar $GITHUB_WORKSPACE/typed/typed-akka-production-ready-api-scala-example/target/scala-2.13/*-assembly-*.jar
   template:
     strategy:
       matrix:

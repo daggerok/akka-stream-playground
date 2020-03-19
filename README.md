@@ -27,7 +27,6 @@ sdk use java 8.0.242.j9-adpt
 * [GitHub: daggerok/akka-persistence-examples](https://github.com/daggerok/akka-persistence-examples)
 * [GitHub: daggerok/akka-persistence-json-serializaer-example](https://github.com/daggerok/akka-persistence-json-serializaer-example)
 * [GitHub: daggerok/akka-examples](https://github.com/daggerok/akka-examples)
-* [GitHub: daggerok/akka-examples](https://github.com/daggerok/akka-examples)
 * [GitHub: daggerok/sbt-examples](https://github.com/daggerok/sbt-examples)
 * [GitHub: daggerok/spring-boot-akka-example](https://github.com/daggerok/spring-boot-akka-example)
 * [GitHub: daggerok/spring-boot-reactive-scala-example](https://github.com/daggerok/spring-boot-reactive-scala-example)

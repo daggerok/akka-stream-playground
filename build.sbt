@@ -22,7 +22,8 @@ lazy val deps: Array[ClasspathDep[ProjectReference]] =
 
 lazy val refs = Array[ProjectReference](
   template,
-  `typed-akka-production-ready-api`,
+  `typed-akka-production-ready-api-java-example`,
+  `typed-akka-production-ready-api-scala-example`,
 )
 
 /* def subProjects */
@@ -35,10 +36,23 @@ lazy val template =
       mainClass in assembly := Some("daggerok.Main"),
     )
 
-lazy val `typed-akka-production-ready-api` =
-  (project in file("typed-akka-production-ready-api"))
+lazy val `typed-akka-production-ready-api-scala-example` =
+  (project in file("typed/typed-akka-production-ready-api-scala-example"))
     .settings(
       libraryDependencies ++= typedAkkaProjectDependencies,
+      mainClass in (Compile, run) := Some("daggerok.Main"),
+      mainClass in assembly := Some("daggerok.Main"),
+    )
+
+lazy val `typed-akka-production-ready-api-java-example` =
+  (project in file("typed/typed-akka-production-ready-api-java-example"))
+    .settings(
+      libraryDependencies ++= (
+        typedAkkaProjectDependencies ++
+        Seq(
+          "org.projectlombok" % "lombok" % "1.18.12" % "provided"
+        )
+      ),
       mainClass in (Compile, run) := Some("daggerok.Main"),
       mainClass in assembly := Some("daggerok.Main"),
     )
