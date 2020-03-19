@@ -20,6 +20,7 @@ sdk use java 8.0.242.j9-adpt
 ## resources
 
 * https://doc.akka.io/docs/akka/2.6/project/migration-guide-2.5.x-2.6.x.html#materializer-changes
+* [YouTube: What's New In Akka 2.6?](https://www.youtube.com/watch?v=ZWIryjFKcXo)
 
 ## other repos
 
